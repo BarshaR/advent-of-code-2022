@@ -1,0 +1,63 @@
+First column = opponent play
+Second column = my play
+
+Example input - 
+C X
+C Y
+C X
+B X
+B Z
+A Z
+
+Column 1 -
+A -> Rock -> 1
+B -> Paper -> 2
+C -> Scissors -> 3
+
+Column 2 - 
+X -> Rock -> 1
+Y -> Paper -> 2
+Z -> Scissors -> 3
+
+Scoring - 
+0 if you lose
+3 for draw 
+6 for win
+
+Each letter will be mapped to a play (rock, paper or scissors). 
+Have a method which parses a line and determines the play
+Another method which determines the outcome (win, lose, draw)
+
+2 approaches - 
+1. object oriented way of doing it - 
+    create a struct which represents a play
+
+    {
+        play: Rock
+        player1Code: A
+        player2Code: X
+        score: 1
+    }
+
+Would then need to create methods to traverse this depending on what you want to find out - 
+- player 1 selects A, is that rock/paper/scissors?
+- player 2 selects X, is that rock/paper/scissors?
+- what is the score allocated to rock?
+
+1. 
+Use maps as the data structure
+
+key/value -> playCode/play
+[
+    A -> Rock
+    X -> Rock
+    B -> Paper
+    Y -> Paper
+]
+
+key/value -> play/score
+[
+    Rock -> 
+]
+
+Create an array to represent the round scores, indexes will match the original input
