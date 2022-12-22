@@ -23,16 +23,16 @@ func Run() {
 
 	fileScanner := bufio.NewScanner(readFile)
 
-	currTotal := 0
+	currentTotal := 0
 	var totals []int
 
 	for fileScanner.Scan() {
 		if line := fileScanner.Text(); line == "" || line == "\n" {
-			totals = append(totals, currTotal)
-			currTotal = 0
+			totals = append(totals, currentTotal)
+			currentTotal = 0
 		} else {
 			if val, err := strconv.Atoi(line); err == nil {
-				currTotal = currTotal + val
+				currentTotal = currentTotal + val
 			}
 
 		}
