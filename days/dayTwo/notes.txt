@@ -61,3 +61,15 @@ key/value -> play/score
 ]
 
 Create an array to represent the round scores, indexes will match the original input
+
+Win logic - 
+
+wins against - 
+
+Rock -> Scissors 
+Paper -> Rock
+Scissors -> Paper
+
+checkWin(player1, player2) winner {
+
+}
