@@ -59,6 +59,7 @@ func parseRound(line string) round {
 		// calculate winner
 		round.winner = calculateWinner(round.playerOneChoice, round.playerTwoChoice)
 
+		// calculate scores
 		if round.winner == "draw" {
 			round.playerOneScore = 3 + winScore[round.playerOneChoice]
 			round.playerTwoScore = 3 + winScore[round.playerTwoChoice]
@@ -70,7 +71,6 @@ func parseRound(line string) round {
 			round.playerOneScore = round.playerOneScore + winScore[round.playerOneChoice]
 		}
 
-		// calculate score
 	}
 	return round
 }
@@ -108,9 +108,9 @@ var winScore = map[string]int{
 }
 
 var winsAgainst = map[string][]string{
-	"Rock":     []string{"Scissors"},
-	"Scissors": []string{"Paper"},
-	"Paper":    []string{"Rock"},
+	"Rock":     {"Scissors"},
+	"Scissors": {"Paper"},
+	"Paper":    {"Rock"},
 }
 
 type round struct {
